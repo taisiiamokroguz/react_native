@@ -1,22 +1,26 @@
 
-import { View, Button, StyleSheet } from "react-native";
+import { View,Text, Button, StyleSheet, Pressable } from "react-native";
+import ProductCard from "./components/ProductCard";
 
 export default function App() {
-  const [currBack, newBack] = useState("lightblue");
   const styles = StyleSheet.create({
-    main_view: {
+    my_view: {
       flex: 1, 
       justifyContent: "center",
       alignItems: "center",
       padding: 20,
-    },
-  });
+      gap:20,
+      width:"100%",
+      height:"auto",
+      backgroundColor:"lightblue"
 
-  return (
-    <View style={[styles.main_view, { backgroundColor: currBack }]}>
-      <Button color="red" title="Red" onPress={() => newBack("red")} />
-      <Button color="green" title="Green" onPress={() => newBack("green")} />
-      <Button color="blue" title="Blue" onPress={() => newBack("blue")} />
+    },
+    
+  })
+  return(
+    <View style={styles.my_view}>
+      <ProductCard photoUri="https://ronin.in.ua/content/images/12/600x600l80mc0/33196887128631.webp" title="Миша безпровідна Bluetooth або USB Logitech M350 Pebble Wireless Sand"></ProductCard>
+     
     </View>
   );
 }
